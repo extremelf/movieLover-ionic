@@ -1,0 +1,57 @@
+{
+	"1": {
+		"title": "Max Payne",
+		"year": 2009,
+		"time": "100",
+		"director": "John Moore",
+		"actors": [
+			"Mark Wahlberg",
+			"Mila Kunis",
+			"Beau Bridges",
+			"Ludacris",
+			"Chris O'Donnell",
+			"Donal Logue",
+			"Amaury Nolasco",
+			"Kate Burton",
+			"Olga Kurylenko",
+			"Rothaford Gray",
+			"Joel Gordon",
+			"Jamie Hector",
+			"Andrew Friedman",
+			"Marianthi Evans",
+			"Nelly Furtado",
+			"Jay Hunter",
+			"Maxwell McCabe-Lokos",
+			"Kjartan Hewitt"
+		],
+		"posterLocation": "../../assets/movies/4.jpg"
+	},
+	"2":{
+		"title": "Rambo",
+		"year": 2008,
+		"time": "92",
+		"director": "Sylvester Stallone",
+		"actors": [
+			"Sylvester Stallone",
+			"Julie Benz",
+			"Matthew Marsden",
+			"Graham McTavish",
+			"Reynaldo Gallegos",
+			"Jake La Botz",
+			"Tim Kang",
+			"Maung Maung Khin",
+			"Paul Schulze",
+			"Cameron Pearson",
+			"Thomas Peterson",
+			"Tony Skarberg",
+			"James With",
+			"Kasikorn Niyompattana",
+			"Shaliew 'Lek' Bamrungbun",
+			"Supakorn Kitsuwon",
+			"Aung Aay Noi",
+			"Ken Howard"
+		],
+		"posterLocation": "../../assets/movies/3.jpg"
+	}
+}
+

@@ -20,18 +20,9 @@
     </ion-card-header>
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
-        <ion-slide>
-          <img src = "../../assets/covers teste/external-content.duckduckgo.com.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src = "../../assets/covers teste/external-content.duckduckgo.com.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src = "../../assets/covers teste/Screenshot_2021-05-25 movie cover at DuckDuckGo.png">
-        </ion-slide>
-        <ion-slide>
-          <img src = "../../assets/covers teste/external-content.duckduckgo.com.jpg">
-        </ion-slide>
+          <ion-slide *ngFor="let action of actionMovies | keyvalue" (click)="verMovie('info-movies',action.key, actionMovies)">
+            <ion-img src = {{action.value.posterLocation}}></ion-img>
+          </ion-slide>
       </ion-slides>
     </ion-card-content>
   </ion-card>
@@ -43,11 +34,8 @@
     </ion-card-header>
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
-        <ion-slide>
-          <img src = "../../assets/covers teste/external-content.duckduckgo.com.jpg">
-        </ion-slide>
-        <ion-slide>
-          <img src = "../../assets/covers teste/Screenshot_2021-05-25 movie cover at DuckDuckGo.png">
+        <ion-slide *ngFor="let adventure of adventureMovies | keyvalue" (click)="verMovie('info-movies',adventure.key, adventureMovies)">
+          <ion-img src = {{adventure.value.posterLocation}}></ion-img>
         </ion-slide>
       </ion-slides>
     </ion-card-content>
@@ -61,10 +49,10 @@
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
         <ion-slide>
-          <img src = "../../assets/covers teste/external-content.duckduckgo.com.jpg">
+          <h1>teste 1</h1>
         </ion-slide>
         <ion-slide>
-          <img src = "../../assets/covers teste/Screenshot_2021-05-25 movie cover at DuckDuckGo.png">
+          <h1>teste 2</h1>
         </ion-slide>
       </ion-slides>
     </ion-card-content>
