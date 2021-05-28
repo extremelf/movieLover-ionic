@@ -9,6 +9,7 @@ export class Tab1Page implements OnInit{
 
   public actionMovies: any;
   public adventureMovies: any;
+  public thrillerMovies: any;
 
   slidesOptions = {
     initialSlide: 0,
@@ -28,6 +29,10 @@ export class Tab1Page implements OnInit{
 
     this.movieServ.getAdventureMovies().subscribe( movies => {
       this.adventureMovies = movies;
+    })
+
+    this.movieServ.getThrillerMovies().subscribe( movies => {
+      this.thrillerMovies = movies;
     })
   }
 

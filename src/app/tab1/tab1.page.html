@@ -48,11 +48,8 @@
     </ion-card-header>
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
-        <ion-slide>
-          <h1>teste 1</h1>
-        </ion-slide>
-        <ion-slide>
-          <h1>teste 2</h1>
+        <ion-slide *ngFor="let thriller of thrillerMovies | keyvalue" (click)="verMovie('info-movies',thriller.key, thrillerMovies)">
+          <ion-img src = {{thriller.value.posterLocation}}></ion-img>
         </ion-slide>
       </ion-slides>
     </ion-card-content>

@@ -52,6 +52,54 @@
 			"Ken Howard"
 		],
 		"posterLocation": "../../assets/movies/3.jpg"
+	},
+	"3": {
+		"title": "Army of the Dead",
+		"year": 2021,
+		"time": "148",
+		"director": "Zack Snyder",
+		"actors": [
+			"Dave Bautista",
+			"Ella Purnell",
+			"Omari Hardwick",
+			"Ana de la Reguera",
+			"Theo Rossi",
+			"Matthias Schweighöfer",
+			"Nora Arnezeder",
+			"Hiroyuki Sanada",
+			"Garret Dillahunt",
+			"Tig Notaro",
+			"Raúl Castillo",
+			"Huma Qureshi",
+			"Samantha Win",
+			"Richard Cetrone",
+			"Michael Cassidy"
+		],
+		"posterLocation": "../../assets/movies/9.jpg"
+	},
+	"4": {
+		"title": "Those Who Wish Me Dead",
+		"year": 2021,
+		"time": "100",
+		"director": "Taylor Sheridan",
+		"actors": [
+			"Angelina Jolie",
+			"Finn Little",
+			"Jon Bernthal",
+			"Aidan Gillen",
+			"Nicholas Hoult",
+			"Jake Weber",
+			"Medina Senghore",
+			"Tyler Perry",
+			"Boots Southerland",
+			"Tory Kittles",
+			"James Jordan",
+			"Lora Martinez-Cunningham",
+			"Howard Ferguson Jr.",
+			"Ryan Jason Cook",
+			"Laura Niemi"
+		],
+		"posterLocation": "../../assets/movies/10.jpg"
 	}
 }
 

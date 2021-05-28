@@ -1,14 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>infoMovies</ion-title>
+    <ion-title>{{movie.title}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
-  <ion-img src = {{movie.posterLocation}}></ion-img>
-
+<ion-content fullscreen>
+  <ion-card>
+    <ion-img src = {{movie.posterLocation}}></ion-img>
+    <ion-card-content>
+      <ion-text>{{movie.title}}</ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

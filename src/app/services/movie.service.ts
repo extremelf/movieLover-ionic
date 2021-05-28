@@ -9,6 +9,7 @@ export class MovieService {
 
   private actionMovies: any;
   private adventureMovies: any;
+  private thrillerMovies: any;
 
   constructor(private router: Router, private rotaAtiva: ActivatedRoute) { }
 
@@ -31,6 +32,18 @@ export class MovieService {
       .then(json => {
         this.adventureMovies = json;
         observer.next(this.adventureMovies);
+        observer.complete();
+      })
+    })
+  }
+
+  getThrillerMovies(){
+    return new Observable (observer => {
+      fetch('../../assets/thrillerMovies.json')
+      .then(resposta => resposta.json())
+      .then(json => {
+        this.thrillerMovies = json;
+        observer.next(this.thrillerMovies);
         observer.complete();
       })
     })

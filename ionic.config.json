@@ -1,5 +1,7 @@
 {
   "name": "movieLover",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
