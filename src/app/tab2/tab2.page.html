@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Search
@@ -8,10 +8,7 @@
     <ion-searchbar 
     showCancelButton 
     searchIcon="search" 
-    animated
-    cancel-button-icon
-    (ionInput)="updateSearchResults2($event)">
-    </ion-searchbar>
+    (ionInput)="filterSearch($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -24,13 +21,12 @@
     <ion-searchbar
     showCancelButton 
     searchIcon="search" 
-    animated
-    cancel-button-icon
-    (ionInput)="updateSearchResults2($event)"></ion-searchbar>
+    (ionInput)="filterSearch($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
-  <ion-list id="teste">
+  <ion-list class="teste">
     <ion-item>Amsterdam</ion-item>
     <ion-item>Bogota</ion-item>
     <ion-item>Buenos Aires</ion-item>

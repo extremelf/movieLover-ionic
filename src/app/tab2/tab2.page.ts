@@ -1,5 +1,4 @@
-import { importExpr } from '@angular/compiler/src/output/output_ast';
-import { Component, ViewChild, ViewChildren } from '@angular/core';
+import { Component, QueryList, ViewChildren, ElementRef } from '@angular/core';
 import { ToastController, IonList, IonItem } from '@ionic/angular';  
 
 @Component({
@@ -8,16 +7,21 @@ import { ToastController, IonList, IonItem } from '@ionic/angular';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
+  public tipoClass: any;
   
   constructor(public toastCtrl: ToastController) {}
 
-  private items = <HTMLElement[]>Array.from(document.querySelector("ion-list").children);
+  @ViewChildren(IonItem,{read: ElementRef}) lista: QueryList<ElementRef>;
 
-  updateSearchResults2(event){
-    const query = event.target.value.toLowerCase();
-      if(this.items != null){this.items.forEach(item => {
-        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-        item.style.display = shouldShow ? 'block' : 'none';
-      });}
+  filterSearch(evt){
+    this.lista.forEach(item =>{
+      console.log(item.nativeElement.inneHTML);
+      
+      const show = item.nativeElement.innerHTML.toLowerCase().indexOf(evt.target.value.toLowerCase()) > -1;
+      //console.log(item);
+      item.nativeElement.style.display = show? 'block' : 'none';
+      //item.nativeElement.attributes.class.nodeValue = show ? 'ion-hidden' : 'item md in-list ion-focusable hydrated';
+    });
   }
 }
