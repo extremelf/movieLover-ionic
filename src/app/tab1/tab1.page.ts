@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../services/movie.service'
+import { MovieService } from '../services/movie.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -28,7 +28,7 @@ export class Tab1Page implements OnInit{
 
     this.movieServ.getAdventureMovies().subscribe( movies => {
       this.adventureMovies = movies;
-    })
+    });
   }
 
   verMovie(rota: string, numero: string, movie: any) {

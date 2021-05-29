@@ -12,4 +12,18 @@
       <ion-title size="large">Search</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item class="ion-padding-start">
+
+    <ion-searchbar (ionInput)="($event)">
+      <!--Esta linha de codigo nao está a ir buscar os filmes que deveria vir de uma funcão getmoveies implementada no js desta pagina-->
+      <!-- URL DO QUE TENTEI SEGUIR: https://ionicframework.com/docs/v3/components/#searchbar
+      Print do local da pagina em que estava em assets/printsdeguiao-->
+      <ion-list>
+        <ion-item *ngFor="let item of actionMovies ">
+          {{item}}
+        </ion-item>
+      </ion-list>
+
+    </ion-searchbar>
+  </ion-item>
 </ion-content>
