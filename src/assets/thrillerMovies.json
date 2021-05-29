@@ -1,0 +1,52 @@
+{
+    "1": {
+        "title": "Spiral",
+        "year": 2021,
+        "time": "93",
+        "director": "Darren Lynn Bousman",
+        "actors": [
+            "Chris Rock",
+            "Max Minghella",
+            "Samuel L. Jackson",
+            "Marisol Nichols",
+            "Dan Petronijevic",
+            "Richard Zeppieri",
+            "Patrick McManus",
+            "Ali Johnson",
+            "Zoie Palmer",
+            "Dylan Roberts",
+            "K.C Collins",
+            "Edie Inksetter",
+            "Nazneen Contractor",
+            "Thomas Mitchell",
+            "Carvin Winans"
+        ],    
+        "sinopse": "Working in the shadow of his father, an esteemed police veteran (Samuel L. Jackson), brash Detective Ezekiel 'Zeke' Banks (Chris Rock) and his rookie partner (Max Minghella) take charge of a grisly investigation into murders that are eerily reminiscent of the city's gruesome past. Unwittingly entrapped in a deepening mystery, Zeke finds himself at the center of the killer's morbid game. ",
+        "posterLocation": "../../assets/movies/11.jpg"
+    },
+    "2": {
+        "title": "A Quiet Place Part II",
+        "year": 2020,
+        "time": "97",
+        "director": "John Krasinki",
+        "actors": [
+            "Emily Blunt",
+            "John Krasinki",
+            "Millicent Simmonds",
+            "Noah Jupe",
+            "Cillian Murphy",
+            "Djimon Housou",
+            "Okieriete Onaodowan",
+            "Scoot McNairy",
+            "Zachary Golinger",
+            "Blake DeLong",
+            "Gary Sundown",
+            "Stefania Warwick",
+            "Alycia Ripley",
+            "Cristalis Bonilla",
+            "Domonic Taggart"
+        ],
+        "sinopse": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize the creatures that hunt by sound are not the only threats lurking beyond the sand path.",
+        "posterLocation": "../../assets/movies/12.jpg"
+    }
+}
