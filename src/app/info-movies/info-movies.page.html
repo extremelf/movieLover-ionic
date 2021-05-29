@@ -8,11 +8,75 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-card>
-    <ion-img src = {{movie.posterLocation}}></ion-img>
-    <ion-card-content>
-      <ion-text>{{movie.title}}</ion-text>
-      <ion-textarea> {{movie.sinopse}}</ion-textarea>
-    </ion-card-content>
-  </ion-card>
+    <ion-img src = {{movie.posterLocation}} class="imgsize"></ion-img>
+
+    <h1 class="text">{{movie.title}}</h1>
+
+    <h2 class="text">Storyline:</h2>
+
+    <div name="main" style="position:relative;display:grid;">
+      <p [class]="show?'showText':'hideText'">{{movie.sinopse}}</p>
+    </div>
+    
+
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col><ion-button size="small" (click)="displayText()">
+          {{show?'Read Less':'Read More'}}
+          <ion-icon [name]="show? 'remove-circle-outline': 'add-circle-outline'"></ion-icon>
+        </ion-button></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button size="medium" expand="block">Add to Watchlist</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button size="medium" expand="block">Set as Viewed</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-fab horizontal="center" edge="true">
+            <ion-fab-button color="light">
+              <ion-icon name="share-social-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <ion-fab-button color="reddit" (click)="presentToast('Reddit')">
+                <ion-icon name="logo-reddit"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="end">
+              <ion-fab-button color="dark" (click)="presentToast('Twitter')">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="bottom">
+              <ion-fab-button color="secondary" (click)="presentToast('Facebook')">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="start">
+              <ion-fab-button color="light" (click)="presentToast('Google')">
+                <ion-icon name="logo-google"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+
 </ion-content>
