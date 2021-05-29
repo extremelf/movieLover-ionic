@@ -9,7 +9,13 @@ const routes: Routes = [
   {
     path: 'info-movies',
     loadChildren: () => import('./info-movies/info-movies.module').then( m => m.InfoMoviesPageModule)
+  },  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
+
+
+
 ];
 @NgModule({
   imports: [

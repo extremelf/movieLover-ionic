@@ -7,9 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="header">
+    <h2> Elon Muskteers</h2>
+  </div>
+  <div class="flex">
+    <div class="white-border">
+      <div class="img-box">
+        <img src="assets/icon/img.png">
+      </div>
+    </div>
+    </div>
+  <div class="settings">
+    <ion-button slot="icon-only" fill="clear" (click)="nextPage()">
+      <ion-icon slot="start" name="settings-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Filmes vistos
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides [options]="slidesOptions">
+        <ion-slide *ngFor="let action of actionMovies | keyvalue" (click)="verMovie('info-movies',action.key, actionMovies)">
+          <ion-img src = {{action.value.posterLocation}}></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

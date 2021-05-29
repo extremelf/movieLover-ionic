@@ -22,7 +22,7 @@ export class MovieService {
         observer.next(this.actionMovies);
         observer.complete();
       });
-    })
+    });
   }
 
   getAdventureMovies(){
@@ -33,8 +33,8 @@ export class MovieService {
         this.adventureMovies = json;
         observer.next(this.adventureMovies);
         observer.complete();
-      })
-    })
+      });
+    });
   }
 
   getThrillerMovies(){
@@ -45,8 +45,8 @@ export class MovieService {
         this.thrillerMovies = json;
         observer.next(this.thrillerMovies);
         observer.complete();
-      })
-    })
+      });
+    });
   }
 
   goRota(rota: string, numero: string, movies: any){
@@ -66,8 +66,8 @@ export class MovieService {
           observador.next(infoMovie);
           observador.complete();
         }
-      })
-    })
+      });
+    });
   }
 }
 

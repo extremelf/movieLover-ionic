@@ -1,0 +1,14 @@
+[
+  {
+    "key": "Username",
+    "type": "input",
+    "required": true
+  },
+  {
+    "key": "password",
+    "type": "input",
+    "required": true,
+    "type": "password"
+  }
+
+]
