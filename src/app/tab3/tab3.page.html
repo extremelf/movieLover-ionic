@@ -7,9 +7,54 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+ <!-- <div class="header">
+    <h2> Elon Muskteers</h2>
+  </div>
+  <div class="flex">
+    <div class="white-border">
+      <div class="img-box">
+        <img src="assets/icon/img.png">
+      </div>
+    </div>
+    </div>-->
+  <ion-avatar class="item-avatar">
+    <img src= {{user.avatar}}>
+  </ion-avatar>
+  <ion-item>  
+    <ion-label style="margin: auto">{{user.nome}}</ion-label>
+  </ion-item>
+  <div class="settings">
+    <ion-button slot="icon-only" fill="clear" (click)="nextPage()">
+      <ion-icon slot="start" name="settings-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Watched movies
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides [options]="slidesOptions">
+        <ion-slide  *ngFor="let whatchedMovie of user['viewed'] | keyvalue" (click)="verMovie('info-movies',whatchedMovie.key, user['viewed'])">
+          <ion-img src = {{whatchedMovie.value.posterLocation}}></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Whatchlist
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides [options]="slidesOptions">
+        <ion-slide *ngFor="let watchList of user['watchlist'] | keyvalue" (click)="verMovie('info-movies',watchList.key, user['watchlist'])">
+          <ion-img src = {{watchList.value.posterLocation}}></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

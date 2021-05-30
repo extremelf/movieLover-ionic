@@ -27,21 +27,5 @@
     text-overflow:ellipsis;
   }
 
-  :root {
-    --ion-color-reddit: #ff4500;
-    --ion-color-reddit-rgb: 255,69,0;
-    --ion-color-reddit-contrast: #ffffff;
-    --ion-color-reddit-contrast-rgb: 255,255,255;
-    --ion-color-reddit-shade: #e03d00;
-    --ion-color-reddit-tint: #ff581a;
-  }
   
-  .ion-color-reddit {
-    --ion-color-base: var(--ion-color-reddit);
-    --ion-color-base-rgb: var(--ion-color-reddit-rgb);
-    --ion-color-contrast: var(--ion-color-reddit-contrast);
-    --ion-color-contrast-rgb: var(--ion-color-reddit-contrast-rgb);
-    --ion-color-shade: var(--ion-color-reddit-shade);
-    --ion-color-tint: var(--ion-color-reddit-tint);
-  }
   

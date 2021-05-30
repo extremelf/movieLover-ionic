@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,8 @@ export class MovieService {
   private actionMovies: any;
   private adventureMovies: any;
   private thrillerMovies: any;
+  private user: any;
+  private userNative: any;
 
   constructor(private router: Router, private rotaAtiva: ActivatedRoute) { }
 
@@ -47,6 +49,23 @@ export class MovieService {
         observer.complete();
       })
     })
+  }
+
+  getUser(){
+    return new Observable (observer => {
+      fetch('../../assets/user.json')
+      .then(resposta => resposta.json())
+      .then(json => {
+        this.user = json;
+        console.log(this.user);
+        observer.next(this.user);
+        observer.complete();
+      })
+    })
+  }
+
+  getCreatedUser(){
+    return this.user;
   }
 
   goRota(rota: string, numero: string, movies: any){

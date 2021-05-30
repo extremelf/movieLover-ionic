@@ -29,7 +29,7 @@
   <ion-slides [options]="slidesOptions">
     <ion-card *ngFor="let filme of actionMovies | keyvalue" (click)="verMovie('info-movies',filme.key, actionMovies)">
       <ion-img src ={{filme.value.posterLocation}}></ion-img>
-      <ion-text hidden="true">{{filme.value.title}}</ion-text>
+      <ion-text hidden="true" >{{filme.value.title}}</ion-text>      
     </ion-card>
   </ion-slides>
 </ion-content>

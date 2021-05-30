@@ -33,10 +33,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button size="medium" expand="block">Add to Watchlist</ion-button>
+          <ion-button size="medium" expand="block" [disabled]="isDisabledWatchList" (click)="addWatchList()">Add to Watchlist</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button size="medium" expand="block">Set as Viewed</ion-button>
+          <ion-button size="medium" expand="block" [disabled]="isDisabledViewed" (click)="addViewed()">Set as Viewed</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -52,22 +52,22 @@
               <ion-icon name="share-social-outline"></ion-icon>
             </ion-fab-button>
             <ion-fab-list side="top">
-              <ion-fab-button color="reddit" (click)="presentToast('Reddit')">
+              <ion-fab-button color="reddit" (click)="presentToast('Shared on Reddit')">
                 <ion-icon name="logo-reddit"></ion-icon>
               </ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="end">
-              <ion-fab-button color="dark" (click)="presentToast('Twitter')">
+              <ion-fab-button color="dark" (click)="presentToast('Shared on Twitter')">
                 <ion-icon name="logo-twitter"></ion-icon>
               </ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="bottom">
-              <ion-fab-button color="secondary" (click)="presentToast('Facebook')">
+              <ion-fab-button color="secondary" (click)="presentToast('Shared on Facebook')">
                 <ion-icon name="logo-facebook"></ion-icon>
               </ion-fab-button>
             </ion-fab-list>
             <ion-fab-list side="start">
-              <ion-fab-button color="light" (click)="presentToast('Google')">
+              <ion-fab-button color="light" (click)="presentToast('Shared on Google')">
                 <ion-icon name="logo-google"></ion-icon>
               </ion-fab-button>
             </ion-fab-list>

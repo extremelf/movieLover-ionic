@@ -1,0 +1,42 @@
+.header {
+  height: 180px;
+  background-color: #5260ff;
+  width: 100%;
+  padding-top: 1px;
+}
+
+.header h2{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.img-box{
+  border-radius: 50%;
+  height: 130px;
+  overflow: hidden;
+  width: 130px;
+}
+.white-border{
+  border: solid white 4px;
+  border-radius: 50% ;
+  width: fit-content;
+
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  margin-top: -76px;
+}
+
+.item-avatar  {
+  width:100% !important;
+  height : 100% !important;
+  max-width: 140px !important;  //any size
+  max-height: 140px !important; //any size
+  display: flex;
+
+  margin: auto;
+
+  margin-top:25px;
+
+}
