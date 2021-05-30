@@ -1,17 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start"  >
-      <ion-back-button defaultHref="/tab3" color="primary">
-
-      </ion-back-button>
+  <ion-toolbar class="fade">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" default-href="tab3"></ion-back-button>
     </ion-buttons>
     <ion-title>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <div class="img">
     <img src="assets/icon/img.png">
   </div>
+
+  <ion-list>
+  <ion-item>
+    <ion-label position="floating">Username</ion-label>
+    <ion-input placeholder="Current username"></ion-input>
+  </ion-item>
+
+    <ion-button type="submit" slot="start" shape="round" size="small" > Submit new username</ion-button>
+    <ion-item>
+      <ion-label position="floating">Old password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password Confirm</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-button slot="start" shape="round" size="small"> Alter Password</ion-button>
+  </ion-list>
 
 </ion-content>
