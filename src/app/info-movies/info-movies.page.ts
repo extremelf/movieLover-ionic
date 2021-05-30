@@ -40,6 +40,11 @@ export class InfoMoviesPage implements OnInit {
     this.show = !this.show;
   }
 
+  /**
+    * Toast para apresentar o estado do sistema
+    * @param servico
+    */
+
   async presentToast(servico: any) {
     const toast = await this.toastController.create({
       message: servico,
@@ -47,6 +52,10 @@ export class InfoMoviesPage implements OnInit {
     });
     toast.present();
   }
+
+  /**
+    * Adicionar movies ao array da watchlist de um user
+    */
 
   addWatchList(){
     let mostra = true;
@@ -58,12 +67,16 @@ export class InfoMoviesPage implements OnInit {
     mostra ? (() => {
       this.user["watchlist"].push(this.movie);
       this.isDisabledWatchList = true;
-      this.presentToast("Adicionado à sua lista");
+      this.presentToast("Added to Watchlist");
     }) ()
     : (() => {
-      this.presentToast("já existe");
+      this.presentToast("Already exists");
     }) ();
   }
+
+  /**
+    * Adicionar movies ao array da watchlist de um user
+    */
 
   addViewed(){
     let mostra = true;
@@ -76,10 +89,10 @@ export class InfoMoviesPage implements OnInit {
       this.user["viewed"].push(this.movie);
       console.log(this.user);
       this.isDisabledViewed = true;
-      this.presentToast("Adicionado à sua lista");
+      this.presentToast("Added to Viewed");
     }) ()
     :(() => {
-      this.presentToast("já existe");
+      this.presentToast("Already exists");
     }) ();
   }
 }

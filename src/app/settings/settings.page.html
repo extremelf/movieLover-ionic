@@ -26,8 +26,6 @@
     </ion-row>
   </form>
 
-    <!--<ion-button type="submit" slot="start" shape="round" size="small" (click)="" > Submit new username</ion-button>-->
-
   <form [formGroup]="myform" (ngSubmit)="submitForm()" novalidate>
     <ion-item>
       <ion-label position="floating">Old password</ion-label>
@@ -50,33 +48,4 @@
     </ion-row>
   </form>
 </ion-list>
-
-
-
-
-  <!--
-
-  <ion-list>
-  <ion-item>
-    <ion-label position="floating">Username</ion-label>
-    <ion-input placeholder={{user.nome}}></ion-input>
-  </ion-item>
-
-    
-    <ion-item>
-      <ion-label position="floating">Old password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password Confirm</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-
-    <ion-button slot="start" shape="round" size="small"> Alter Password</ion-button>
-  </ion-list>
--->
 </ion-content>
