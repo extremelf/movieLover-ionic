@@ -28,7 +28,6 @@ export class TabsPage {
   }
 
   async presentModal() {
-    console.log("ola")
     const modal = await this.modalController.create({
       component: ModalPage
     });
