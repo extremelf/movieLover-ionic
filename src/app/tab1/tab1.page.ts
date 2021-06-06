@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../services/movie.service'
+import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { MovieService } from '../services/movie.service';
+
+import { Navigation } from '@angular/router';
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -21,7 +25,9 @@ export class Tab1Page implements OnInit{
     freeMode: true,
     loop: false
   };
-  constructor(private movieServ: MovieService) {}
+  constructor(private movieServ: MovieService) {
+    
+  }
 
   ngOnInit(){
     this.movieServ.getActionMovies().subscribe( movies => {
