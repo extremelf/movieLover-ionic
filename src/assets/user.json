@@ -1,6 +1,8 @@
 {
     "nome": "Johny Boy",
+    "email": "email@example.com",
     "password": "123456",
+    "token": 12345,
     "viewed":[],
     "watchlist": [],
     "avatar": "../../assets/icon/img.png"

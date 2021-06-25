@@ -6,12 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { ModalPageModule } from './modal/modal.module';
-
+import { HttpClientModule, HttpClient} from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation],
+  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

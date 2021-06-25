@@ -5,6 +5,7 @@ import { App } from '@capacitor/app';
 import { Router } from '@angular/router';
 import { ModalPageModule } from '../modal/modal.module';
 import { ModalPage } from '../modal/modal.page';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -14,11 +15,11 @@ import { ModalPage } from '../modal/modal.page';
 })
 export class TabsPage {
 
-  constructor(private orientacao: ScreenOrientation, private routerOutlet: IonRouterOutlet, private platform: Platform, private nav: Router, private modalController: ModalController) {
+  constructor(private orientacao: ScreenOrientation, private routerOutlet: IonRouterOutlet, private platform: Platform, private nav: Router, private modalController: ModalController, private authService: AuthenticationService) {
     this.orientacao.lock(this.orientacao.ORIENTATIONS.PORTRAIT);
 
     App.addListener("backButton", () =>{
-      if(this.routerOutlet.canGoBack){
+      if(this.routerOutlet.canGoBack && this.authService.isAuthenticated.value){
         window.history.back();
       }
       if(this.nav.url == '/tabs/tab1'){

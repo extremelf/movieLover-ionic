@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../services/movie.service';
 import {Router} from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-tab3',
@@ -21,7 +22,7 @@ export class Tab3Page implements OnInit{
     freeMode: true,
     loop: false
   };
-  constructor(private movieServ: MovieService, private route: Router) {}
+  constructor(private movieServ: MovieService, private route: Router, private authService: AuthenticationService) {}
 
   ngOnInit(){
     this.user = this.movieServ.getCreatedUser();
@@ -34,5 +35,10 @@ export class Tab3Page implements OnInit{
 
   verMovie(rota: string, numero: string, movie: any) {
     this.movieServ.goRota(rota,numero, movie);
+  }
+
+  async logout(){
+    await this.authService.logout();
+    this.route.navigateByUrl('/', { replaceUrl: true});
   }
 }
