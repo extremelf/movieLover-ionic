@@ -21,7 +21,7 @@ export class Tab1Page implements OnInit{
     direction: 'horizontal',
     speed: 300,
     spaceBetween: 8,
-    slidesPerView: 3,
+    slidesPerView: 3.5,
     freeMode: true,
     loop: false
   };

@@ -18,7 +18,7 @@ export class Tab3Page implements OnInit{
     direction: 'horizontal',
     speed: 300,
     spaceBetween: 8,
-    slidesPerView: 3,
+    slidesPerView: 3.5,
     freeMode: true,
     loop: false
   };
@@ -40,5 +40,21 @@ export class Tab3Page implements OnInit{
   async logout(){
     await this.authService.logout();
     this.route.navigateByUrl('/', { replaceUrl: true});
+  }
+
+  getSize(lista){
+    return Object.keys(lista).length;
+  }
+
+  isListsClear(){
+    let tamanho = 0
+    for(let lista of Object.keys(this.user.lists)){
+      if(Object.keys(this.user.lists[lista].movies).length > 0){
+        
+        tamanho++
+      }
+    }
+    console.log(tamanho)
+    return tamanho;
   }
 }

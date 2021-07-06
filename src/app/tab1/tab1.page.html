@@ -21,7 +21,7 @@
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
           <ion-slide *ngFor="let action of actionMovies | keyvalue" (click)="verMovie('info-movies',action.key, actionMovies)">
-            <ion-img src = {{action.value.posterLocation}}></ion-img>
+            <ion-img class="input-group" src = {{action.value.posterLocation}}></ion-img>
           </ion-slide>
       </ion-slides>
     </ion-card-content>
@@ -35,7 +35,7 @@
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
         <ion-slide *ngFor="let adventure of adventureMovies | keyvalue" (click)="verMovie('info-movies',adventure.key, adventureMovies)">
-          <ion-img src = {{adventure.value.posterLocation}}></ion-img>
+          <ion-img class="input-group" src = {{adventure.value.posterLocation}}></ion-img>
         </ion-slide>
       </ion-slides>
     </ion-card-content>
@@ -49,7 +49,7 @@
     <ion-card-content>
       <ion-slides [options]="slidesOptions">
         <ion-slide *ngFor="let thriller of thrillerMovies | keyvalue" (click)="verMovie('info-movies',thriller.key, thrillerMovies)">
-          <ion-img src = {{thriller.value.posterLocation}}></ion-img>
+          <ion-img class="input-group" src = {{thriller.value.posterLocation}}></ion-img>
         </ion-slide>
       </ion-slides>
     </ion-card-content>

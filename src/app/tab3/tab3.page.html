@@ -29,33 +29,28 @@
       <ion-icon slot="start" name="settings-outline"></ion-icon>
     </ion-button>
   </div>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Watched movies
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-slides [options]="slidesOptions">
-        <ion-slide  *ngFor="let whatchedMovie of user['viewed'] | keyvalue" (click)="verMovie('info-movies',whatchedMovie.key, user['viewed'])">
-          <ion-img src = {{whatchedMovie.value.posterLocation}}></ion-img>
-        </ion-slide>
-      </ion-slides>
-    </ion-card-content>
-  </ion-card>
+  <div *ngFor="let listas of user.lists | keyvalue">
+    <div *ngIf="getSize(listas.value.movies) > 0">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            {{listas.value.name}}
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-slides [options]="slidesOptions">
+            <ion-slide *ngFor="let watchList of listas.value.movies | keyvalue" (click)="verMovie('info-movies',watchList.key, listas.value.movies)">
+              <ion-img class="input-group" src = {{watchList.value.posterLocation}}></ion-img>
+            </ion-slide>
+          </ion-slides>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="isListsClear()==0">
+    <h2>
+      Your lists are clean
+    </h2>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Whatchlist
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-slides [options]="slidesOptions">
-        <ion-slide *ngFor="let watchList of user['watchlist'] | keyvalue" (click)="verMovie('info-movies',watchList.key, user['watchlist'])">
-          <ion-img src = {{watchList.value.posterLocation}}></ion-img>
-        </ion-slide>
-      </ion-slides>
-    </ion-card-content>
-  </ion-card>
+  </div>
 </ion-content>

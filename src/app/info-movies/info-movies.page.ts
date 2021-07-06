@@ -25,12 +25,12 @@ export class InfoMoviesPage implements OnInit {
 
     this.user = this.movieServ.getCreatedUser();
 
-    for(let lista of this.user["watchlist"]){
+    for(let lista of this.user.lists[2].movies){
       if(this.movie == lista){
         this.isDisabledWatchList = true;
       }
     }
-    for(let lista of this.user["viewed"]){
+    for(let lista of this.user.lists[1].movies){
       if(this.movie == lista){
         this.isDisabledViewed = true;
       }
@@ -59,13 +59,13 @@ export class InfoMoviesPage implements OnInit {
 
   addWatchList(){
     let mostra = true;
-    for(let lista of this.user["watchlist"]){
+    for(let lista of this.user.lists[2].movies){
       if(this.movie == lista){
         mostra = false;
       }
     }
     mostra ? (() => {
-      this.user["watchlist"].push(this.movie);
+      this.user.lists[2].movies.push(this.movie);
       this.isDisabledWatchList = true;
       this.presentToast("Added to Watchlist");
     }) ()
@@ -80,13 +80,13 @@ export class InfoMoviesPage implements OnInit {
 
   addViewed(){
     let mostra = true;
-    for(let lista of this.user["viewed"]){
+    for(let lista of this.user.lists[1].movies){
       if(this.movie == lista){
         mostra = false;
       }
     }
     mostra ? ( () => {
-      this.user["viewed"].push(this.movie);
+      this.user.lists[1].movies.push(this.movie);
       console.log(this.user);
       this.isDisabledViewed = true;
       this.presentToast("Added to Viewed");
