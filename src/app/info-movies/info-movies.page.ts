@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import {PopoverController, ToastController} from '@ionic/angular';
 import { MovieService } from '../services/movie.service';
+import {PopoverComponent} from "../popover/popover.component";
 
 @Component({
   selector: 'app-info-movies',
@@ -16,7 +17,7 @@ export class InfoMoviesPage implements OnInit {
   isDisabledWatchList = false;
   isDisabledViewed = false;
 
-  constructor(private toastController: ToastController,private movieServ: MovieService) { }
+  constructor(private toastController: ToastController,private movieServ: MovieService, public popoverController: PopoverController) { }
 
   ngOnInit() {
     this.movieServ.getInfoMovie().subscribe(infoMovie => {
@@ -25,12 +26,12 @@ export class InfoMoviesPage implements OnInit {
 
     this.user = this.movieServ.getCreatedUser();
 
-    for(let lista of this.user.lists[2].movies){
+    for(let lista of this.user.lists[1].movies){
       if(this.movie == lista){
         this.isDisabledWatchList = true;
       }
     }
-    for(let lista of this.user.lists[1].movies){
+    for(let lista of this.user.lists[0].movies){
       if(this.movie == lista){
         this.isDisabledViewed = true;
       }
@@ -39,6 +40,20 @@ export class InfoMoviesPage implements OnInit {
   displayText() {
     this.show = !this.show;
   }
+
+  async presentPopover(movie) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      translucent:true,
+      componentProps:{key1: this.movie}
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+
 
   /**
     * Toast para apresentar o estado do sistema
@@ -59,13 +74,13 @@ export class InfoMoviesPage implements OnInit {
 
   addWatchList(){
     let mostra = true;
-    for(let lista of this.user.lists[2].movies){
+    for(let lista of this.user.lists[1].movies){
       if(this.movie == lista){
         mostra = false;
       }
     }
     mostra ? (() => {
-      this.user.lists[2].movies.push(this.movie);
+      this.user.lists[1].movies.push(this.movie);
       this.isDisabledWatchList = true;
       this.presentToast("Added to Watchlist");
     }) ()
@@ -80,13 +95,13 @@ export class InfoMoviesPage implements OnInit {
 
   addViewed(){
     let mostra = true;
-    for(let lista of this.user.lists[1].movies){
+    for(let lista of this.user.lists[0].movies){
       if(this.movie == lista){
         mostra = false;
       }
     }
     mostra ? ( () => {
-      this.user.lists[1].movies.push(this.movie);
+      this.user.lists[0].movies.push(this.movie);
       console.log(this.user);
       this.isDisabledViewed = true;
       this.presentToast("Added to Viewed");

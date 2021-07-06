@@ -17,7 +17,7 @@
     <div name="main" style="position:relative;display:grid;">
       <p [class]="show?'showText':'hideText'">{{movie.sinopse}}</p>
     </div>
-    
+
 
     <ion-grid>
       <ion-row>
@@ -29,20 +29,14 @@
         <ion-col></ion-col>
       </ion-row>
     </ion-grid>
-  
+
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button size="medium" expand="block" [disabled]="isDisabledWatchList" (click)="addWatchList()">Add to Watchlist</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button size="medium" expand="block" [disabled]="isDisabledViewed" (click)="addViewed()">Set as Viewed</ion-button>
+          <ion-button size="small" expand="block" (click)="presentPopover(movie)"> Add to lists</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
-
-    
-
     <ion-grid>
       <ion-row>
         <ion-col></ion-col>
@@ -77,6 +71,6 @@
       </ion-row>
     </ion-grid>
 
-    
+
 
 </ion-content>

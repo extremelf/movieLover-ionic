@@ -1,0 +1,33 @@
+<p class="classtest">
+  Lists
+  <ion-list >
+    <div *ngFor="let lista of this.user.lists | keyvalue">
+      <ion-item button (click)="adicionarlista(lista.key)">
+        {{lista.value.name}}
+      </ion-item>
+    </div>
+    
+    <ion-item button (click)="toogleShow()">
+      Criar nova lista
+    </ion-item>
+  </ion-list>
+
+  <!--
+  <ion-fab class="fabutton" vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button >
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  -->
+  <ion-item-divider class="divide" color="secondary">
+
+  </ion-item-divider>
+   
+  <ion-item *ngIf="isshown">
+    <ion-label position="floating" >Lista Nova</ion-label>
+    <ion-input placeholder="Nome da lista"></ion-input>
+    <ion-button (click)="novalista()"> Criar e adicionar</ion-button>
+  </ion-item>
+
+
+</p>

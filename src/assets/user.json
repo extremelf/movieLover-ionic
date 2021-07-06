@@ -3,15 +3,15 @@
     "email": "email@example.com",
     "password": "123456",
     "token": 12345,
-    "lists":{
-        "1":{
+    "lists":[
+        {
             "name": "Viewed",
             "movies":[]
         },
-        "2":{
+        {
             "name": "Watchlist",
             "movies": []
         }
-    },
+    ],
     "avatar": "../../assets/icon/img.png"
 }

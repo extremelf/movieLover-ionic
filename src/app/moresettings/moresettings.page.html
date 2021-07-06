@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Definições</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Informações Pessoais</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Nome</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+    </ion-item>
+    <ion-item button (click)="nextPage()">
+      <ion-label>Password</ion-label>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Acerca</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>Developers</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Versão</ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

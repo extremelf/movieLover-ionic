@@ -29,7 +29,7 @@ export class Tab3Page implements OnInit{
   }
 
   nextPage(){
-    this.route.navigate(['/settings']);
+    this.route.navigate(['/moresettings']);
   }
 
 
@@ -50,7 +50,7 @@ export class Tab3Page implements OnInit{
     let tamanho = 0
     for(let lista of Object.keys(this.user.lists)){
       if(Object.keys(this.user.lists[lista].movies).length > 0){
-        
+
         tamanho++
       }
     }

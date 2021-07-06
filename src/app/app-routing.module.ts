@@ -30,6 +30,14 @@ const routes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full'
       
+  },
+  {
+    path: 'pop',
+    loadChildren: () => import('./pop/pop.module').then( m => m.PopPageModule)
+  },
+  {
+    path: 'moresettings',
+    loadChildren: () => import('./moresettings/moresettings.module').then( m => m.MoresettingsPageModule)
   }
 ];
 @NgModule({
